@@ -123,20 +123,20 @@ export class CalculadoraComponent implements OnInit {
   /**
    * On operador click
    */
-
   onOperadorClick(operador: string) {
     this.operador = operador;
     if (this.fase === 1) {
       this.operando1 = parseFloat(this.pantallaInferiorString);
       this.pantallaSuperiorString = this.operando1 + " " + this.operador;
       this.pantallaInferiorString = this.operando2.toString();
+      this.pantallaInferiorString = "0";
     }
     this.fase = 2;
   }
+
   /**
    * On igual click
    */
-
   onIgualClick() {
 
     if (this.fase === 2) {
@@ -150,7 +150,6 @@ export class CalculadoraComponent implements OnInit {
   /**
    * On ac click
    */
-
   onAcClick() {
     this.setEstadoInicial();
   }
